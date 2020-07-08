@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import Pokelist from './components/Pokelist/Pokelist';
 import Footer from './components/Footer/Footer';
 import Pagination from './components/Pagination/Pagination';
+import ShoppintCart from './components/ShoppingCart/ShoppingCart';
 
 function App() {
   const [pokedata, setPokeData] = useState([]);
@@ -65,6 +66,8 @@ function App() {
         goToNextPage = { nextPageUrl ? goToNextPage : null }
         goToPreviousPage = { prevPageUrl ? goToPreviousPage : null }
       />
+
+      <ShoppintCart />
 
       <Footer />
     </>
