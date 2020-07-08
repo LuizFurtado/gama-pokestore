@@ -1,8 +1,9 @@
 import React from 'react';
+import './style.css';
 
 export default function ShoppingCart() {
     return (
-        <aside>
+        <aside id="shopping-cart">
             <h2>Meu carrinho</h2>
             <ul>
                 <li>Produto 01 - R$ 100,00 - <a href="#">Remover</a></li>
@@ -11,7 +12,10 @@ export default function ShoppingCart() {
             </ul>
             <p>Valor total da compra: <span>R$ 300,00</span></p>
 
-            <button>Finalizar compra</button>
+            <div className="text-center">
+                <button className="btn btn-outline-success">Finalizar compra</button>
+            </div>
+            
         </aside>
     )
 }

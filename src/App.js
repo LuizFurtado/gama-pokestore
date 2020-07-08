@@ -59,16 +59,22 @@ function App() {
     <>
       <Header />
         { loading && <h2>Carregando itens...</h2> }
-      
-      <Pokelist pokedata = { pokedata } />
 
-      <Pagination
-        goToNextPage = { nextPageUrl ? goToNextPage : null }
-        goToPreviousPage = { prevPageUrl ? goToPreviousPage : null }
-      />
+      <div className="container">
+        <div className="row">
+          <div className="col-md-9">
+            <Pokelist pokedata = { pokedata } />
 
-      <ShoppintCart />
-
+            <Pagination
+              goToNextPage = { nextPageUrl ? goToNextPage : null }
+              goToPreviousPage = { prevPageUrl ? goToPreviousPage : null }
+            />
+          </div>
+          <div className="col-md-3">
+            <ShoppintCart />
+          </div>
+        </div>
+      </div>
       <Footer />
     </>
   );
