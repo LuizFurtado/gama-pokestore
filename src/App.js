@@ -26,28 +26,25 @@ function App() {
         setNextPageUrl(res.data.next);
         setPrevPageUrl(res.data.previous);
         // setPokeData(res.data.results.map(pokemon => ({ name: pokemon.name, url: pokemon.url }) ));
-        let _pokeList = res.data.results.map(pokemon => ({ name: pokemon.name, url: pokemon.url }));
-        let _pokemonData = _pokeList.map(pokeListItem => {
-          let pokemon = {}
-          axios.get(pokeListItem.url)
+        res.data.results.map(pokemon => 
+        {
+          axios.get(pokemon.url)
             .then(res => {
-              pokemon = {
+              pokedata.push({
                 id: res.data.id,
                 name: res.data.name,
-              }
-              return pokemon;
+                image: res.data.sprites.front_default,
+                types: res.data.types,
+                price: Math.floor(Math.random() * 1000) + 1
+              });
+              setPokeData([...pokedata]);
             });
-            return pokemon;
         });
-
-        console.log(_pokemonData);
       });
 
       return () => cancel();
 
   },[currentPageUrl]);
-
-  console.log(pokedata);
 
   function goToNextPage() {
     setCurrentPageUrl(nextPageUrl);

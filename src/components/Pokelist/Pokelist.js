@@ -6,7 +6,7 @@ export default function Pokelist({ pokedata }) {
       {
         pokedata.map((pokemon, index) => (
           <div key={ `${pokemon.name}-${index}` }>
-            { pokemon.name } - { pokemon.id }
+            { pokemon.name } - { pokemon.id } - { pokemon.price }
           </div>
         ))
       }
